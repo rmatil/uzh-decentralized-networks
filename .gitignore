@@ -1,0 +1,15 @@
+# OS X 
+DS_Store
+
+# Google Drive
+Icon
+
+# Latex
+*.pdf
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*~
