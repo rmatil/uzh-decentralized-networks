@@ -94,26 +94,26 @@
             already existing network. It consists of multiple nodes which 
             are connected by links, either virtual or logical. 
             Each of these links represent a path on the underlying network. \\
-            P2P Applications such as BitTorrent use the Internet as an underlying network to build their overlay network on top of it.
+            P2P Applications such as BitTorrent use the Internet as an underlying network to build their overlay network on top of it. VPN on top of IP.
     \item \textbf{What is the difference between «overlay» and «underlay»? Why is creating an overlay necessary?} \\
             «Overlay» means a layer which is located on top of another layer. 
             It lays \textit{over} the other. «Underlay», by contrast, means exactly the opposite. 
             The layer is located below another. \\
             Creating an overlay network might be necessary due to the use of a different addressing scheme for the individual nodes.
     \item \textbf{Discuss the following affirmation: «WhatsApp can be considered an Overlay Network.» Do you aggree/disagree? Explain the reasons.} \\
-            In my opinion, WhatsApp can be considered as an Overlay Network because each user represents an individual node which 
-            communicates with other nodes directly. Also, WhatsApp provides a simple solution to address another node by using its phone number.
+            In our opinion, WhatsApp can be considered as an Overlay Network because each user represents an individual node which 
+            communicates with other nodes directly and the connection through the underlay is not visible. Also, WhatsApp provides a simple solution to address another node by using its phone number.
             Furhtermore, WhatsApp does use the Internet as an underlying network to build its services on top of it.
   \end{enumerate}
 
 \section{Classification of P2P systems}
   \begin{enumerate}[1]
     \item \textbf{A full decentralized system should have «self-organization» and «direct interaction» properties. Why?}
-          Self-organisation due to the possibility, that a particular node can be offline suddenly. If this node was a central service 
-          and self-organisation would not be a requirement, then parts of the networtk or its entireness would fail to maintain is demanded service.
-          Direct interaction because the availablility of other specific nodes may be limited. 
+          Self-organisation due to the possibility, that a particular node can suddenly be offline. If this node was a central service 
+          and self-organisation would not be a requirement, then parts of the network or its entireness would fail to maintain its demanded service. \\
+          It should use \textit{direct interaction} to limit its use of bandwidth, thus strengthening the stability and responsiveness of the system.
     \item \textbf{Skype can be considered a pure P2P network or an hybrid P2P network? Discuss the answer.}
-          Skype, in my opinion, is a hybrid P2P network, because each node has to verify its login credentials on a centralized authentication server. 
+          Skype is a hybrid P2P network, because each node has to verify its login credentials by a centralized authentication server. 
           Once a user resp. node is authenticated, Skype could be considered as a pure P2P network.
     \item \textbf{In file-sharing P2P applications, how is search/lookup done in “early” Napster (centralized)? And in Gnutella (flooding-based)? How about in BitTorrent (tracker- based)? Explain each with few short sentences, including at least one advantage and one disadvantage of each.}
           \begin{itemize}
@@ -136,18 +136,35 @@
 \section{P2P Applications}
   \begin{enumerate}[1]
     \item \textbf{Discuss why NAT is considered an enemy of P2P systems.} \\
-          Because NAT allows hiding of nodes behind a single IP address. Because of that, a node can not be addressed direclty anymore
+          Because NAT allows hiding of nodes behind a single IP address. Because of that, a node can not be addressed directly anymore.
     \item \textbf{Imagine a P2P application that has an accurate locality system, i.e. that is able to identify the closest peers, considering “close” as the underlay hop distance (IP) between two nodes. Discuss why this property may be desirable by ISPs (Internet Service Providers).} \\
-          ISPs can reduce the workload each node has to do overall as well as reduce the time a packet needs to reach its target destination.
+          ISPs can reduce the workload each node has to do overall as well as reduce the number of hops a packet needs to reach its target destination.
+          Thus reducing the used bandwidth, power consumption and consumer satisfaction.
+
     \item \textbf{If you were affiliated with a copyright enforcement authority, how would you collect identities of users breaking copyright law, i.e. uploading illegal content in Gnutella? Would you conclude that users of P2P networks are generally less bound to be sued for distributing copyright-infringing material than users of a C/S system, such as RapidShare? What would be the best strategy for a user who does not want to get caught?}
-          One way to identifiy peers in Gnutella is by sending search requests for files which are secured by copyright. Each peer which responds with search 
-          results could then be identified. \\
-          I would not conclude that P2P network users are generally less bound to be sued. Governments or attorneys might monitoring a P2P network 
-          much heavier than a ordinary Client/Server service due to the knowledge that many users may use such networks to share copyrighted material.
-          But the effort which has to be done to finally bring a user to justice might be higher than in a Client/Server infrastructre
-          where the operator of such a service could simply be bound by law to prevent uploading copyrighted material.\\
-          A possible strategy to not get caught could include the use of VPNs through multiple servers located in different countries. Because
-          of that, one must work together with multiple different laws of different countries to obtain some information about an user. \\
+
+          One way to identifiy peers in Gnutella is by sending search requests
+          for files which are secured by copyright. Each peer which responds
+          with search  results could then be identified. Since the content
+          cannot be checked by a central authority corrupting the content with
+          some sort of tracking device (information, program, etc.) is simple
+          and effective.
+
+          We would not conclude that P2P network users are generally less
+          bound to be sued. Governments or attorneys might monitoring a P2P
+          network  much heavier than a ordinary Client/Server service due to
+          the knowledge that many users may use such networks to share
+          copyrighted material. But the effort which has to be done to finally
+          bring a user to justice might be higher than in a Client/Server
+          infrastructre,  where the operator of such a service could simply be
+          bound by law to prevent uploading copyrighted material.
+          
+          A possible strategy to not get caught could include the use of VPNs
+          through multiple servers located in different countries. Because of
+          that, one must work together with multiple different laws of
+          different countries to obtain some information about an user.
+
+
   \end{enumerate}
 
 
