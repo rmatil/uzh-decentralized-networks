@@ -132,18 +132,18 @@ at least one advantage and one disadvantage of each.}
 
   \item[Napster]
 
-  Has a centralized index, which provides a list of peers, which have the wanted
+  has a centralized index, which provides a list of peers, which have the wanted
   file. Thus the lookup is - provided the central lookup server is live -
   guaranteed, fast and complete. It also provides a central managing and trust
   authority. The centralized lookup server is a single point of failure.
 
   \item[Gnutella]
 
-  A search request gets forwarded until a specific defined search depth is
-  reached (ttl) or the search request gets answered - this process is called
-  flooding. If a node can answer the request, the search results are sent to the
-  requesting peer - on the same way the request arrived, only in reverse. He can
-  then download the file directly from the offering entity.
+  forwards search request until a specific defined search depth is reached (ttl)
+  or the search request gets answered - this process is called flooding. If a
+  node can answer the request, the search results are sent to the requesting
+  peer - on the same way the request arrived, only in reverse. He can then
+  download the file directly from the offering entity.
 
   This set-up results in a big effort to locate a particular file. Sadly it is
   not scalable as too many search requests can result in a Denial-of-service
@@ -152,7 +152,7 @@ at least one advantage and one disadvantage of each.}
 
   \item[BitTorret]
 
-  It is using a distributed hash table (DHT) for lookup of files. The network
+  is using a distributed hash table (DHT) for lookup of files. The network
   topology is formed such that for any key to a given hash, each node has a link
   to a node which owns the file to the key or a link to a node whose node ID is
   closer to the given key. Once there is no node with a ID closer to the key,
