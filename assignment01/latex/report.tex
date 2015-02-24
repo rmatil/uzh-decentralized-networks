@@ -1,24 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% University/School Laboratory Report
-% LaTeX Template
-% Version 3.0 (4/2/13)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Linux and Unix Users Group at Virginia Tech Wiki
-% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-% PACKAGES AND DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -90,18 +69,18 @@
 \section{Defnitions and Characteristics}
   \begin{enumerate}[1]
     \item \textbf{Define what is an «Overlay Network» in your own words, and give examples of applications that have/may have an overlay network.} \\
-            An overlay network is a network built on top of another, 
-            already existing network. It consists of multiple nodes which 
-            are connected by links, either virtual or logical. 
+            An overlay network is a network built on top of another,
+            already existing network. It consists of multiple nodes which
+            are connected by links, either virtual or logical.
             Each of these links represent a path on the underlying network. \\
             P2P Applications such as BitTorrent use the Internet as an underlying network to build their overlay network on top of it. VPN on top of IP.
     \item \textbf{What is the difference between «overlay» and «underlay»? Why is creating an overlay necessary?} \\
-            «Overlay» means a layer which is located on top of another layer. 
-            It lays \textit{over} the other. «Underlay», by contrast, means exactly the opposite. 
+            «Overlay» means a layer which is located on top of another layer.
+            It lays \textit{over} the other. «Underlay», by contrast, means exactly the opposite.
             The layer is located below another. \\
             Creating an overlay network might be necessary due to the use of a different addressing scheme for the individual nodes.
     \item \textbf{Discuss the following affirmation: «WhatsApp can be considered an Overlay Network.» Do you aggree/disagree? Explain the reasons.} \\
-            In our opinion, WhatsApp can be considered as an Overlay Network because each user represents an individual node which 
+            In our opinion, WhatsApp can be considered as an Overlay Network because each user represents an individual node which
             communicates with other nodes directly and the connection through the underlay is not visible. Also, WhatsApp provides a simple solution to address another node by using its phone number.
             Furhtermore, WhatsApp does use the Internet as an underlying network to build its services on top of it.
   \end{enumerate}
@@ -109,24 +88,24 @@
 \section{Classification of P2P systems}
   \begin{enumerate}[1]
     \item \textbf{A full decentralized system should have «self-organization» and «direct interaction» properties. Why?}
-          Self-organisation due to the possibility, that a particular node can suddenly be offline. If this node was a central service 
+          Self-organisation due to the possibility, that a particular node can suddenly be offline. If this node was a central service
           and self-organisation would not be a requirement, then parts of the network or its entireness would fail to maintain its demanded service. \\
           It should use \textit{direct interaction} to limit its use of bandwidth, thus strengthening the stability and responsiveness of the system.
     \item \textbf{Skype can be considered a pure P2P network or an hybrid P2P network? Discuss the answer.}
-          Skype is a hybrid P2P network, because each node has to verify its login credentials by a centralized authentication server. 
+          Skype is a hybrid P2P network, because each node has to verify its login credentials by a centralized authentication server.
           Once a user resp. node is authenticated, Skype could be considered as a pure P2P network.
     \item \textbf{In file-sharing P2P applications, how is search/lookup done in “early” Napster (centralized)? And in Gnutella (flooding-based)? How about in BitTorrent (tracker- based)? Explain each with few short sentences, including at least one advantage and one disadvantage of each.}
           \begin{itemize}
-            \item \textit{Napster}: There exists a centralized index service. Each node which requests a search for a file, contacts the 
-                  index service, which provides a list of peers having the files available. 
-                  \textit{Advantage}: Lookup of files can be guaranteed. 
+            \item \textit{Napster}: There exists a centralized index service. Each node which requests a search for a file, contacts the
+                  index service, which provides a list of peers having the files available.
+                  \textit{Advantage}: Lookup of files can be guaranteed.
                   \textit{Disadvantage}: The index service acts as a single point of failure.
             \item \textit{Gnutella}: A search request gets forwarded until a specific defined search depth is reached (ttl) or the search request gets answered.
                   If a node can answer the request, the search results are sent to the requesting peer. He can then download the file direclty from the offering entity.
                   \textit{Advantage}: Big effort is made to locate a particular file.
                   \textit{Disadvantage}: Not scalable, lookup can not be guaranteed.
-            \item \textit{BitTorrent}: It is using a distributed hash table (DHT) for lookup of files. The network topology is formed such that for any key to a given hash, 
-                  each node has a link to a node which owns the file to the key or a link to a node whose node ID is closer to the given key. Once there is no node with 
+            \item \textit{BitTorrent}: It is using a distributed hash table (DHT) for lookup of files. The network topology is formed such that for any key to a given hash,
+                  each node has a link to a node which owns the file to the key or a link to a node whose node ID is closer to the given key. Once there is no node with
                   a ID closer to the key, the nearest node is reached which owns the file.
                   \textit{Advantage}: Highly scalable by automatically distributing loads to new nodes.
                   \textit{Disadvantage}: Very similar data values can be at totally different nodes due to the hash function.
@@ -158,7 +137,7 @@
           bring a user to justice might be higher than in a Client/Server
           infrastructre,  where the operator of such a service could simply be
           bound by law to prevent uploading copyrighted material.
-          
+
           A possible strategy to not get caught could include the use of VPNs
           through multiple servers located in different countries. Because of
           that, one must work together with multiple different laws of
