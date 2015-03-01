@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fullpage}
+% \usepackage[left=3.0cm, right=2.5cm,top=2.0cm,bottom=2.5cm]{geometry}
+\usepackage{enumerate}
+%\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{amsmath}
+
+% \definecolor{dkgreen}{rgb}{0,0.6,0}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{color}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+
+\lstset{
+  language=bash,
+  basicstyle=\small\ttfamily,
+  captionpos=b,
+  frame=none,
+  literate=%
+    {ö}{{\"o}}1
+    {ä}{{\"a}}1
+    {ü}{{\"u}}1
+    {«}{{\guillemotleft}}1
+    {»}{{\guillemotright}}1
+}
+\lstset{
+  language=python,                % the language of the code
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small\ttfamily,               % the size of the fonts that are used for the code
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  showspaces=false,               % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,         % underline spaces within strings only
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  commentstyle=\color{mygreen},   % comment style
+  keywordstyle=\color{blue},      % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  numbers=left,
+  stepnumber=1,
+  frame=single,                   % adds a frame around the code
+  frameround=,
+  framerule=0.8pt,
+}
+\renewcommand{\labelenumi}{\alph{enumi}.}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%-------------------------------------------------------------------------------
+% DOCUMENT INFORMATION
+%-------------------------------------------------------------------------------
+
+\title{Overlay Networks, Decentralized Systems and Their Applications
+\\Exercise 2}
+
+\author{Raphael \textsc{Matile}\\12-711-222\\raphael.matile@uzh.ch
+\and Samuel \textsc{von Baussnern}\\09-914-623\\samuel.vonbaussern@uzh.ch}
+\date{\today} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\section{P2P Distributed Hash Tables}
+
+\subsection{Tick the box with the right answer True (T), or Flase (F):}
+
+\begin{description}
+  \item[A central point will be always required with distributed indexing]
+    TBD
+  \item[A distributed hash table requires that each node has a unique iden- tifier]
+    TBD
+  \item[P2P applications generate low amounts of traffic (compared to client-server) 
+        since that is the main purpose of having an P2P overlay]
+    TBD
+  \item[An overlay on top of another overlay is possible]
+    True
+\end{description}
+
+\subsection{Cite and explain six key differences comparing the three strategies 
+discussed in the lecture slides to store and retrieve data in P2P systems 
+(Central server, Flooding search, Distributed indexing).}
+
+TBD
+
+\subsection{What is the complexity of each lookup strategy listed below? 
+And give a brief explanation of the reasons. Give the 
+complexity in big-O notation, e.g. O(N2).}
+
+TBD
+
+\subsection{How is addressing handled in DHTs? How are identifiers 
+chosen (for nodes and content)?}
+
+TBD
+
+\subsection{What happens if one node that is responsible for a given 
+DHT address space fails? Explain two possible techniques to overcome this problem.}
+
+TBD
+
+\subsection{Compare iterative routing with recursive routing. 
+Give at least one advantage and one disadvantage for each technique.}
+
+TBD
+
+\subsection{Cite method names, parameters, and return 
+values of the generic interface of distributed hash tables.}
+
+TBD
+
+\subsection{Considering Kademlia/TomP2P, answer the following:}
+\subsubsection{How many IDs are possible?}
+
+TBD
+
+\subsubsection{Where is a key located?}
+
+TBD
+
+\subsubsection{What is the XOR distance between 3 and 4?}
+
+
+
+\section{Challenge Task Preparation}
+
+See file: TBD
+
+\end{document}
