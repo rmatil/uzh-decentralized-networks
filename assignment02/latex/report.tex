@@ -88,7 +88,36 @@
 discussed in the lecture slides to store and retrieve data in P2P systems
 (Central server, Flooding search, Distributed indexing).}
 
-TBD
+\begin{description}
+  \item[Single point of failure]
+
+    Central server has it, as it stores the meta-data in a centralized node. The
+    other strategies don't.
+
+  \item[Network load]
+
+    Central server and flooding search is not scalable, distributed indexing is.
+
+  \item[Complexity of lookup strategy]
+
+    Central server has a lookup complexity of $\mathcal{O}(1)$, flooding search
+    $\mathcal{O}(n)$ and distributed indexing $\mathcal{O}(\log{}n)$.
+
+  \item[All node state actualisation]
+
+    Central server has a lookup complexity of $\mathcal{O}(n)$, flooding search
+    $\mathcal{O}(1)$ and distributed indexing $\mathcal{O}(\log{}n)$.
+
+  \item[Query fuzzy keys]
+
+    Only possible with a centralized and flooding approach. Flooding might lead
+    to different results though, and include false negatives.
+
+  \item[Robustness]
+
+    Distributed indexing and flooding search is robust, central server not.
+
+\end{description}
 
 \subsection{What is the complexity of each lookup strategy listed below?
 And give a brief explanation of the reasons. Give the
