@@ -19,19 +19,7 @@
 \usepackage[protrusion=true,expansion=true]{microtype} % Better typography
 
 \lstset{
-  language=bash,
-  basicstyle=\small\ttfamily,
-  captionpos=b,
-  frame=none,
-  literate=%
-    {ö}{{\"o}}1
-    {ä}{{\"a}}1
-    {ü}{{\"u}}1
-    {«}{{\guillemotleft}}1
-    {»}{{\guillemotright}}1
-}
-\lstset{
-  language=python,                % the language of the code
+  language=Java,                % the language of the code
   backgroundcolor=\color{white},   % choose the background color
   basicstyle=\small\ttfamily,               % the size of the fonts that are used for the code
   breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
@@ -48,6 +36,7 @@
   frame=single,                   % adds a frame around the code
   frameround=,
   framerule=0.8pt,
+  tabsize=4
 }
 \renewcommand{\labelenumi}{\alph{enumi}.}
 
@@ -74,14 +63,22 @@
 
 \begin{description}
   \item[A central point will be always required with distributed indexing]
+
     False
+
   \item[A distributed hash table requires that each node has a unique identifier]
+
     True
+
   \item[P2P applications generate low amounts of traffic (compared to client-server)
-        since that is the main purpose of having an P2P overlay]
+         since that is the main purpose of having an P2P overlay]
+
     False
+
   \item[An overlay on top of another overlay is possible]
+
     True
+
 \end{description}
 
 \subsection{Cite and explain six key differences comparing the three strategies
@@ -197,6 +194,6 @@ ${011}_2\ \text{XOR}\ {100}_2 = {111}_2 = 7_{10}$
 
 \section{Challenge Task Preparation}
 
-See file: TBD
+\lstinputlisting[language=Java]{../src/Exercise2.java}
 
 \end{document}
