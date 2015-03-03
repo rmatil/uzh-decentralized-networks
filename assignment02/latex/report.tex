@@ -119,44 +119,81 @@ discussed in the lecture slides to store and retrieve data in P2P systems
 
 \end{description}
 
-\subsection{What is the complexity of each lookup strategy listed below?
-And give a brief explanation of the reasons. Give the
-complexity in big-O notation, e.g. O(N2).}
+\subsection{What is the complexity of each lookup strategy listed below? And
+give a brief explanation of the reasons. Give the complexity in big-O notation,
+e.g. $\mathcal{O}(N^2)$.}
+
+\begin{description}
+  \item[Central server]
+
+    $\mathcal{O}(1)$
+
+    As it stores the information directly. Additionally it requires only one
+    request to fetch the meta-data.
+
+  \item[Flooding]
+
+    $\mathcal{O}(N)$
+
+    As the request gets forwarded to every connected node but to the sender.
+
+  \item[DHT]
+
+    $\mathcal{O}(\log{}n)$
+
+    The request is forwarded only to the nearest node, which is equivalent to a
+    binary search.
+
+\end{description}
+
+\subsection{How is addressing handled in DHTs? How are identifiers chosen (for
+nodes and content)?}
+
+Each node gets a randomly determined key or the public key of the node for
+addressing.
+
+To identify certain resources the content is hashed.
+
+\subsection{What happens if one node that is responsible for a given DHT address
+space fails? Explain two possible techniques to overcome this problem.}
+
+If the node fails to respond with a \lstinline{keep-alive} message a redundant
+key-value pair stored on another node is chosen instead.
 
 TBD
 
-\subsection{How is addressing handled in DHTs? How are identifiers
-chosen (for nodes and content)?}
+\subsection{Compare iterative routing with recursive routing. Give at least one
+advantage and one disadvantage for each technique.}
 
-TBD
+In recursive routing the request is forwarded directly to the next node.
+Adv.: You get a free update on the status of the traversed nodes.
+Disadv.: It's not possible to track the process.
 
-\subsection{What happens if one node that is responsible for a given
-DHT address space fails? Explain two possible techniques to overcome this problem.}
+In iterative routing the request is transmitted by the searching node to each
+node after the other until the request is complete.
+Adv.: Tracking the progress.
+Disadv.: You have to maintain a status list of each neighbour.
 
-TBD
+\subsection{Cite method names, parameters, and return values of the generic
+interface of distributed hash tables.}
 
-\subsection{Compare iterative routing with recursive routing.
-Give at least one advantage and one disadvantage for each technique.}
-
-TBD
-
-\subsection{Cite method names, parameters, and return
-values of the generic interface of distributed hash tables.}
-
-TBD
+\begin{itemize}
+  \item \lstinline{put :: (key, value) -> void}
+  \item \lstinline{get :: key -> value}
+\end{itemize}
 
 \subsection{Considering Kademlia/TomP2P, answer the following:}
 \subsubsection{How many IDs are possible?}
 
-TBD
+$2^{160}$
 
 \subsubsection{Where is a key located?}
 
-TBD
+Keys are located on the node whose node ID is closet to the key.
 
 \subsubsection{What is the XOR distance between 3 and 4?}
 
-
+${011}_2\ \text{XOR}\ {100}_2 = {111}_2 = 7_{10}$
 
 \section{Challenge Task Preparation}
 
