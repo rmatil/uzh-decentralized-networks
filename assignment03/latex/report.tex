@@ -75,22 +75,22 @@
 
 \subsection{What is a false positive? Explain how it can happen.}
 
-  The false positive describes the possibility that a element can be in the given 
-  set of elements despite it should not be there at all. 
-  Since certain bits get set to 1 the likelihood that a certain query on the set 
+  The false positive describes the possibility that a element can be in the given
+  set of elements despite it should not be there at all.
+  Since certain bits get set to 1 the likelihood that a certain query on the set
   matches exactly some bits of other hashed values increases.
 
 \subsection{Can the traditional Bloom Filter have false negatives? Explain}
 
-  No it can not. Because bits do not get changed back to zero in insertion
+  No, it can not. Because bits do not get changed back to zero in insertion
   operation, all bits of inserted values remain at 1.
 
-\subsection{Describe a real life application scenario for Bloom 
+\subsection{Describe a real life application scenario for Bloom
 Filters and explain why they are useful in the chosen scenario.}
 
   Google Chrome once used a Bloom Filter to identify malicious URLs. Of each
   website which should be fetched, the URL got checked against a local Bloom Filter.
-  If a match was detected a complete lookup of the URL was made. 
+  If a match was detected a complete lookup of the URL was made.
 
   This application of a Bloom Filter was useful, due to the avoidance of
   many complete lookups of URLs and the corresponding time cap.
@@ -100,7 +100,7 @@ Filters and explain why they are useful in the chosen scenario.}
 
 \subsection{How many IDs are possible?}
 
-  160, because 160 buckets get used.
+  160, because 160 buckets are used.
 
 \subsection{Where is a key located?}
 
@@ -111,7 +111,7 @@ Filters and explain why they are useful in the chosen scenario.}
 
   ${011}_2\ \text{XOR}\ {100}_2 = {111}_2 = 7_{10}$
 
-\subsection{Kademlia routing tables consist of a list for each bit of the node ID. E.g. if 
+\subsection{Kademlia routing tables consist of a list for each bit of the node ID. E.g. if
 a node ID consists of 128 bits, a node will keep 128 such lists. In this case, would 127
 lists be enough, why?}
 
