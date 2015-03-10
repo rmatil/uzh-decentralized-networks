@@ -1,0 +1,125 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fullpage}
+% \usepackage[left=3.0cm, right=2.5cm,top=2.0cm,bottom=2.5cm]{geometry}
+\usepackage{enumerate}
+%\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{amsmath}
+
+% \definecolor{dkgreen}{rgb}{0,0.6,0}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{color}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+
+\lstset{
+  language=Java,                % the language of the code
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\small\ttfamily,               % the size of the fonts that are used for the code
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  showspaces=false,               % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,         % underline spaces within strings only
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  commentstyle=\color{mygreen},   % comment style
+  keywordstyle=\color{blue},      % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  numbers=left,
+  stepnumber=1,
+  frame=single,                   % adds a frame around the code
+  frameround=,
+  framerule=0.8pt,
+  tabsize=4
+}
+\renewcommand{\labelenumi}{\alph{enumi}.}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%-------------------------------------------------------------------------------
+% DOCUMENT INFORMATION
+%-------------------------------------------------------------------------------
+
+\title{Overlay Networks, Decentralized Systems and Their Applications
+\\Exercise 3}
+
+\author{Raphael \textsc{Matile}\\12-711-222\\raphael.matile@uzh.ch
+\and Samuel \textsc{von Baussnern}\\09-914-623\\samuel.vonbaussern@uzh.ch}
+\date{\today} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\section{Bloom Filters}
+
+\subsection{Which operations does the traditional Bloom Filter support?}
+
+  \begin{itemize}
+    \item Insertion
+    \item Query
+  \end{itemize}
+
+\subsection{Does a Bloom Filter have a capacity limit? What changes if more and more elements are added?}
+
+  \begin{itemize}
+    \item A Bloom Filter does not have a capacity limit. So the add operation will never fail.
+    \item The false positive rate increases as elements gets added.
+  \end{itemize}
+
+\subsection{What is a false positive? Explain how it can happen.}
+
+  The false positive describes the possibility that a element can be in the given 
+  set of elements despite it should not be there at all. 
+  Since certain bits get set to 1 the likelihood that a certain query on the set 
+  matches exactly some bits of other hashed values increases.
+
+\subsection{Can the traditional Bloom Filter have false negatives? Explain}
+
+  No it can not. Because bits do not get changed back to zero in insertion
+  operation, all bits of inserted values remain at 1.
+
+\subsection{Describe a real life application scenario for Bloom 
+Filters and explain why they are useful in the chosen scenario.}
+
+  Google Chrome once used a Bloom Filter to identify malicious URLs. Of each
+  website which should be fetched, the URL got checked against a local Bloom Filter.
+  If a match was detected a complete lookup of the URL was made. 
+
+  This application of a Bloom Filter was useful, due to the avoidance of
+  many complete lookups of URLs and the corresponding time cap.
+
+
+\section{Kademlia}
+
+\subsection{How many IDs are possible?}
+
+  160, because 160 buckets get used.
+
+\subsection{Where is a key located?}
+
+  Each node maintains a list of neighbours which maintain a range of keys.
+  So keys are located on the node whose node ID is closest to the key.
+
+\subsection{What is the XOR distance between 3 and 4?}
+
+  ${011}_2\ \text{XOR}\ {100}_2 = {111}_2 = 7_{10}$
+
+\subsection{Kademlia routing tables consist of a list for each bit of the node ID. E.g. if 
+a node ID consists of 128 bits, a node will keep 128 such lists. In this case, would 127
+lists be enough, why?}
+
+  Yes, it is enough, since the node has not maintain itself on the key list.
+
+\section{Challenge Task Preparation}
+
+\lstinputlisting[language=Java]{../src/exercise3/src/net/tomp2p/exercise/raphaelmatile/Main.java}
+\lstinputlisting[language=Java]{../src/exercise3/src/net/tomp2p/exercise/raphaelmatile/DHT.java}
+
+\end{document}
